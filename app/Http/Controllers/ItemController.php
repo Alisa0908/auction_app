@@ -67,4 +67,12 @@ class ItemController extends Controller
         //保存したらindexに戻る
         return redirect('/items');
     }
+
+    public function destroy($id)
+    {
+        $item = Item::find($id);
+        $item->delete();
+
+        return redirect('/items');
+    }
 }
